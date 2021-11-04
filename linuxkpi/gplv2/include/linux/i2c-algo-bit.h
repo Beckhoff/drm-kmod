@@ -1,3 +1,6 @@
+#if 1
+#include_next <linux/i2c-algo-bit.h>
+#else
 #ifndef _LINUX_I2C_ALGO_BIT_H_
 #define _LINUX_I2C_ALGO_BIT_H_
 
@@ -26,4 +29,5 @@ int i2c_bit_add_bus(struct i2c_adapter *);
 int i2c_bit_add_numbered_bus(struct i2c_adapter *);
 extern const struct i2c_algorithm i2c_bit_algo;
 
+#endif
 #endif

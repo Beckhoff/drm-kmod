@@ -1,3 +1,4 @@
+#if 0
 /*
  * Copyright (c) 2016 Matt Macy (mmacy@nextbsd.org)
  * All rights reserved.
@@ -730,3 +731,4 @@ i2c_bit_add_bus(struct i2c_adapter *adap)
 
 	return (0);
 }
+#endif
