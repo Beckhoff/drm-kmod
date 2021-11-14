@@ -1036,9 +1036,7 @@ static int amdgpu_pci_probe(struct pci_dev *pdev,
 			    const struct pci_device_id *ent)
 {
 	struct drm_device *dev;
-#if defined(CONFIG_DEBUG_FS)
 	struct amdgpu_device *adev;
-#endif
 	unsigned long flags = ent->driver_data;
 	int ret, retry = 0;
 	bool supports_atomic = false;
@@ -1120,12 +1118,10 @@ retry_init:
 	} else if (ret)
 		goto err_pci;
 
-#if defined(CONFIG_DEBUG_FS)
 	adev = dev->dev_private;
 	ret = amdgpu_debugfs_init(adev);
 	if (ret)
 		DRM_ERROR("Creating debugfs files failed (%d).\n", ret);
-#endif
 
 	return 0;
 
